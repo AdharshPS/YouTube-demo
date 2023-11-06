@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/utils/color_constant/color_constant.dart';
 import 'package:flutter_application_1/utils/image_constant/image_constant.dart';
 import 'package:flutter_application_1/view/bottom_navigation_bar/bottom_navigation_bar.dart';
 
@@ -28,14 +29,17 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Container(
-        height: 100,
-        width: 120,
-        decoration: BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage(ImageConstant.YouTubeLogo),
-            fit: BoxFit.fill,
+    return Container(
+      color: ColorConstant.mainWhite,
+      child: Center(
+        child: Container(
+          height: 400,
+          width: 400,
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage(ImageConstant.youTubeIcon),
+              // fit: BoxFit.fill,
+            ),
           ),
         ),
       ),

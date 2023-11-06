@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/utils/color_constant/color_constant.dart';
+import 'package:flutter_application_1/utils/image_constant/image_constant.dart';
 import 'package:flutter_application_1/view/bottom_navigation_bar/widgets/bottom_sheet_card.dart';
 import 'package:flutter_application_1/view/home_screen/home_screen.dart';
 import 'package:flutter_application_1/view/profile_screen/profile_screen.dart';
@@ -25,48 +27,62 @@ class _BottomNavigationBarScreenState extends State<BottomNavigationBarScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blueGrey,
-
-      // appbar
-      appBar: AppBar(
-        elevation: 0,
-        actions: [
-          Icon(
-            Icons.cast_sharp,
-            color: Colors.black,
-          ),
-          SizedBox(width: 35),
-          Icon(
-            Icons.notifications_none,
-            color: Colors.black,
-          ),
-          SizedBox(width: 35),
-          Icon(
-            Icons.search,
-            color: Colors.black,
-          ),
-          SizedBox(width: 15),
-        ],
-      ),
+      backgroundColor: ColorConstant.mainWhite,
 
       // bottom navigation bar
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: indexNum,
         selectedItemColor: Colors.black,
         unselectedItemColor: Colors.black,
-        backgroundColor: Colors.white,
+        backgroundColor: ColorConstant.mainWhite,
         unselectedFontSize: 8.5,
         selectedFontSize: 8.5,
         type: BottomNavigationBarType.fixed,
         items: [
           BottomNavigationBarItem(
-            icon: Icon(Icons.home_filled, color: Colors.black),
+            icon: indexNum == 0
+                ? Icon(
+                    Icons.home_filled,
+                    color: Colors.black,
+                    size: 16,
+                  )
+                : Container(
+                    height: 14,
+                    width: 14,
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: AssetImage(
+                          ImageConstant.homeIcon,
+                        ),
+                      ),
+                    ),
+                  ),
             label: "Home",
           ),
           BottomNavigationBarItem(
             icon: indexNum == 1
-                ? Icon(Icons.play_arrow)
-                : Icon(Icons.play_arrow_outlined),
+                ? Container(
+                    height: 14,
+                    width: 14,
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: AssetImage(
+                          ImageConstant.shortsBlack,
+                        ),
+                      ),
+                    ),
+                  )
+                : Container(
+                    height: 20,
+                    width: 20,
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: AssetImage(
+                          ImageConstant.shortsWhite,
+                        ),
+                      ),
+                    ),
+                  ),
             label: "Shorts",
           ),
           BottomNavigationBarItem(
@@ -77,14 +93,27 @@ class _BottomNavigationBarScreenState extends State<BottomNavigationBarScreen> {
             label: "",
           ),
           BottomNavigationBarItem(
-            icon: Icon(indexNum == 3
-                ? Icons.subscriptions_sharp
-                : Icons.subscriptions_outlined),
+            icon: Icon(
+              indexNum == 3
+                  ? Icons.subscriptions_sharp
+                  : Icons.subscriptions_outlined,
+              size: 16,
+            ),
             label: "Subscriptions",
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.play_arrow),
-            label: "Shorts",
+            icon: Container(
+              height: 20,
+              width: 20,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage(
+                    ImageConstant.profile,
+                  ),
+                ),
+              ),
+            ),
+            label: "You",
           ),
         ],
         onTap: (index) {
