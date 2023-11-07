@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/database/database.dart';
 import 'package:flutter_application_1/utils/color_constant/color_constant.dart';
 import 'package:flutter_application_1/utils/image_constant/image_constant.dart';
+import 'package:flutter_application_1/view/home_screen/widgets/shorts_tab_window.dart';
 import 'package:flutter_application_1/view/home_screen/widgets/top_container_widget.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -47,6 +48,7 @@ class HomeScreen extends StatelessWidget {
       // body
       body: Column(
         children: [
+          // top containers
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
             child: Row(
@@ -59,6 +61,9 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
           ),
+          SizedBox(height: 20),
+          // Shorts tab
+          ShortsTabWindow(),
         ],
       ),
     );
