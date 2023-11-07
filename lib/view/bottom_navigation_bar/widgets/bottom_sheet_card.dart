@@ -1,30 +1,25 @@
 import 'package:flutter/material.dart';
 
 class BottomSheetCard extends StatelessWidget {
-  const BottomSheetCard({super.key});
+  const BottomSheetCard({super.key, required this.title, required this.icon});
+
+  final String title;
+  final dynamic icon;
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: List.generate(
-        5,
-        (index) => Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Row(
-            children: [
-              SizedBox(width: 20),
-              CircleAvatar(
-                backgroundColor: Colors.grey[300],
-                child: Icon(
-                  Icons.vertical_distribute_outlined,
-                  color: Colors.black,
-                ),
-              ),
-              SizedBox(width: 20),
-              Text("Create a ShortCut"),
-            ],
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 15),
+      child: Row(
+        children: [
+          SizedBox(width: 20),
+          CircleAvatar(
+            backgroundColor: Colors.grey[300],
+            child: icon,
           ),
-        ),
+          SizedBox(width: 20),
+          Text(title),
+        ],
       ),
     );
   }

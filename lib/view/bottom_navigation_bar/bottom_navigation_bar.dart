@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/database/database.dart';
 import 'package:flutter_application_1/utils/color_constant/color_constant.dart';
 import 'package:flutter_application_1/utils/image_constant/image_constant.dart';
 import 'package:flutter_application_1/view/bottom_navigation_bar/widgets/bottom_sheet_card.dart';
@@ -122,30 +123,43 @@ class _BottomNavigationBarScreenState extends State<BottomNavigationBarScreen> {
               ? showModalBottomSheet(
                   context: context,
                   builder: (context) => Container(
-                      color: Colors.white,
-                      child: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.all(12),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Text(
-                                  "Create",
+                    color: Colors.white,
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.all(12),
+                              child: Text(
+                                "Create",
+                                style: TextStyle(
+                                  fontSize: 16.71,
+                                  fontWeight: FontWeight.w600,
                                 ),
-                                IconButton(
-                                  onPressed: () {
-                                    Navigator.pop(context);
-                                  },
-                                  icon: Icon(Icons.close),
-                                ),
-                              ],
+                              ),
+                            ),
+                            IconButton(
+                              onPressed: () {
+                                Navigator.pop(context);
+                              },
+                              icon: Icon(Icons.close),
+                            ),
+                          ],
+                        ),
+                        Column(
+                          children: List.generate(
+                            DataBase.iconList.length,
+                            (currentindex) => BottomSheetCard(
+                              title: DataBase.iconList[currentindex]["title"],
+                              icon: DataBase.iconList[currentindex]["icon"],
                             ),
                           ),
-                          BottomSheetCard(),
-                        ],
-                      )),
+                        ),
+                      ],
+                    ),
+                  ),
                 )
               : indexNum = index;
         },

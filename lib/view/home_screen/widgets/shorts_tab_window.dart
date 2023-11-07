@@ -33,23 +33,22 @@ class _ShortsTabWindowState extends State<ShortsTabWindow> {
           SizedBox(
             height: 250,
             child: ListView.separated(
-              separatorBuilder: (context, index) => SizedBox(width: 10),
+              separatorBuilder: (context, index) => SizedBox(width: 15),
               scrollDirection: Axis.horizontal,
               shrinkWrap: true,
               // physics: NeverScrollableScrollPhysics(),
               itemCount: 8,
-              itemBuilder: (context, index) => Stack(
-                children: [
-                  Container(
-                    width: 160,
-                    decoration: BoxDecoration(
-                        color: Colors.amber,
-                        borderRadius: BorderRadius.circular(10)),
-                  ),
-                  Positioned(
-                    top: 0,
-                    right: 0,
-                    child: Padding(
+              itemBuilder: (context, index) => Container(
+                width: 160,
+                decoration: BoxDecoration(
+                  color: Colors.amber,
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
+                    Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Icon(
                         Icons.more_vert,
@@ -57,8 +56,32 @@ class _ShortsTabWindowState extends State<ShortsTabWindow> {
                         size: 18,
                       ),
                     ),
-                  ),
-                ],
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Row(
+                          // mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Padding(
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 15),
+                              child: Text("Fish cooked in volcano"),
+                            ),
+                          ],
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.only(
+                            top: 5,
+                            bottom: 15,
+                            left: 15,
+                            right: 15,
+                          ),
+                          child: Text("8.1 lakh views"),
+                        )
+                      ],
+                    )
+                  ],
+                ),
               ),
             ),
           )
