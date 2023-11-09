@@ -7,4 +7,5 @@ class ImageConstant {
   static String youTubeLogo = "asset/images/Logo.png";
   static String shortsLogo = "asset/images/youtube-shorts.png";
   static String liveLogo = "asset/images/Live.png";
+  static String incognito = "asset/images/incognito.png";
 }

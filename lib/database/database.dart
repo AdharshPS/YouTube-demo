@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/utils/color_constant/color_constant.dart';
 import 'package:flutter_application_1/utils/image_constant/image_constant.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class DataBase {
   static List topContainerText = [
@@ -49,5 +50,26 @@ class DataBase {
     "asset/images/newReleases (2).png",
     "asset/images/newReleases (3).png",
     "asset/images/newReleases (4).png",
+  ];
+
+  static List<Map> profileTab = [
+    {
+      "name": "Switch account",
+      "icon": FaIcon(
+        FontAwesomeIcons.doorOpen,
+        size: 14,
+      )
+    },
+    {
+      "name": "Google Account",
+      "icon": FaIcon(
+        FontAwesomeIcons.google,
+        size: 14,
+      )
+    },
+    {
+      "name": "Turn on Incognito",
+      "icon": Image.asset(ImageConstant.incognito),
+    },
   ];
 }

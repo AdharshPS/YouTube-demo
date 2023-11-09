@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/database/database.dart';
 import 'package:flutter_application_1/utils/color_constant/color_constant.dart';
 import 'package:flutter_application_1/utils/image_constant/image_constant.dart';
 
@@ -37,12 +38,18 @@ class _ShortsTabWindowState extends State<ShortsTabWindow> {
               scrollDirection: Axis.horizontal,
               shrinkWrap: true,
               // physics: NeverScrollableScrollPhysics(),
-              itemCount: 8,
+              itemCount: DataBase.story.length,
               itemBuilder: (context, index) => Container(
                 width: 160,
                 decoration: BoxDecoration(
                   color: Colors.amber,
                   borderRadius: BorderRadius.circular(10),
+                  image: DecorationImage(
+                    image: AssetImage(
+                      DataBase.story[index],
+                    ),
+                    fit: BoxFit.fill,
+                  ),
                 ),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -65,7 +72,18 @@ class _ShortsTabWindowState extends State<ShortsTabWindow> {
                             Padding(
                               padding:
                                   const EdgeInsets.symmetric(horizontal: 15),
-                              child: Text("Fish cooked in volcano"),
+                              child: SizedBox(
+                                width: 130,
+                                child: Text(
+                                  "Fish cooked in volcano",
+                                  maxLines: 2,
+                                  overflow: TextOverflow.ellipsis,
+                                  style: TextStyle(
+                                    color: ColorConstant.mainWhite,
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                ),
+                              ),
                             ),
                           ],
                         ),
@@ -76,7 +94,13 @@ class _ShortsTabWindowState extends State<ShortsTabWindow> {
                             left: 15,
                             right: 15,
                           ),
-                          child: Text("8.1 lakh views"),
+                          child: Text(
+                            "8.1 lakh views",
+                            style: TextStyle(
+                              color: ColorConstant.mainWhite,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
                         )
                       ],
                     )

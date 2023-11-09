@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/database/database.dart';
 import 'package:flutter_application_1/utils/color_constant/color_constant.dart';
 import 'package:flutter_application_1/utils/image_constant/image_constant.dart';
+import 'package:flutter_application_1/view/profile_screen/widgets/profile_page_task_bar.dart';
 
 class ProfileSceen extends StatelessWidget {
-  const ProfileSceen({super.key});
+  const ProfileSceen({
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -87,21 +91,14 @@ class ProfileSceen extends StatelessWidget {
               )
             ],
           ),
-          Row(
-            children: List.generate(
-              3,
-              (index) => Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Container(
-                  height: 35,
-                  width: 120,
-                  decoration: BoxDecoration(
-                    color: Color(0xFFc4c4c4),
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                  child: Row(
-                    children: [],
-                  ),
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(
+              children: List.generate(
+                3,
+                (index) => TaskBarWidget(
+                  icon: DataBase.profileTab[index]["icon"],
+                  text: DataBase.profileTab[index]["name"],
                 ),
               ),
             ),

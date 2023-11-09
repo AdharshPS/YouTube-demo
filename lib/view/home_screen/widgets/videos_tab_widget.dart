@@ -5,11 +5,11 @@ class VideosTabWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Padding(
-          padding: const EdgeInsets.all(12),
-          child: Container(
+    return Padding(
+      padding: const EdgeInsets.all(12),
+      child: Column(
+        children: [
+          Container(
             height: 250,
             width: double.infinity,
             decoration: BoxDecoration(
@@ -27,8 +27,38 @@ class VideosTabWidget extends StatelessWidget {
               ],
             ),
           ),
-        )
-      ],
+          SizedBox(height: 5),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  CircleAvatar(
+                    radius: 20,
+                  ),
+                  SizedBox(width: 5),
+                  Column(
+                    children: [
+                      Text(
+                        "hello",
+                        maxLines: 2,
+                        overflow: TextOverflow.ellipsis,
+                        style: TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                      Text("hii"),
+                    ],
+                  ),
+                ],
+              ),
+              Icon(Icons.more_vert),
+            ],
+          )
+        ],
+      ),
     );
   }
 }
