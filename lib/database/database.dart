@@ -16,6 +16,35 @@ class DataBase {
     "Film criticisms",
     "Manga"
   ];
+
+  static List<Map> videoTabMap = [
+    {
+      "description": "Create a Short",
+      "account": "Create a Short",
+      "image": "asset/images/youtube_video_01.jpg",
+    },
+    {
+      "description": "Create a Short",
+      "account": "Create a Short",
+      "image": "asset/images/youtube_video_02.jpg",
+    },
+    {
+      "description": "Create a Short",
+      "account": "Create a Short",
+      "image": "asset/images/youtube_video_03.jpg",
+    },
+    {
+      "description": "Create a Short",
+      "account": "Create a Short",
+      "image": "asset/images/youtube_video_04.jpg",
+    },
+    {
+      "description": "Create a Short",
+      "account": "Create a Short",
+      "image": "asset/images/youtube_video_05.jpg",
+    },
+  ];
+
   static List<Map> iconList = [
     {
       "title": "Create a Short",
@@ -70,6 +99,50 @@ class DataBase {
     {
       "name": "Turn on Incognito",
       "icon": Image.asset(ImageConstant.incognito),
+    },
+  ];
+  static List<Map> profileTabEndSection = [
+    {
+      "name": "Your Videos",
+      "icon": FaIcon(
+        Icons.slideshow,
+        size: 14,
+      ),
+    },
+    {
+      "name": "Downloads",
+      "icon": FaIcon(
+        Icons.download,
+        size: 14,
+      )
+    },
+    {
+      "name": "Your movies",
+      "icon": FaIcon(
+        Icons.movie_creation_outlined,
+        size: 14,
+      )
+    },
+    {
+      "name": "Get Youtube premium",
+      "icon": FaIcon(
+        FontAwesomeIcons.youtube,
+        size: 14,
+      )
+    },
+    {
+      "name": "Time watched",
+      "icon": FaIcon(
+        Icons.insert_chart_outlined_outlined,
+        size: 14,
+      )
+    },
+    {
+      "name": "Help and feedback",
+      "icon": FaIcon(
+        Icons.help_outline,
+        size: 14,
+      )
     },
   ];
 }

@@ -108,8 +108,17 @@ class HomeScreen extends StatelessWidget {
               ShortsTabWindow(),
 
               // videos tab
-              VideosTabWidget(),
-              VideosTabWidget(),
+              ListView.builder(
+                shrinkWrap: true,
+                physics: NeverScrollableScrollPhysics(),
+                itemCount: DataBase.videoTabMap.length,
+                itemBuilder: (context, index) => VideosTabWidget(
+                  title: DataBase.videoTabMap[index]["description"],
+                  subtitle: DataBase.videoTabMap[index]["account"],
+                  image: DataBase.videoTabMap[index]["image"],
+                ),
+              ),
+              ShortsTabWindow(),
             ],
           ),
         ),
