@@ -121,6 +121,10 @@ class _BottomNavigationBarScreenState extends State<BottomNavigationBarScreen> {
           setState(() {});
           index == 2
               ? showModalBottomSheet(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  clipBehavior: Clip.antiAliasWithSaveLayer,
                   context: context,
                   builder: (context) => Container(
                     color: Colors.white,

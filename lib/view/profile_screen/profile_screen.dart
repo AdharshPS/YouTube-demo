@@ -124,6 +124,7 @@ class ProfileSceen extends StatelessWidget {
             SizedBox(height: 20),
             ListView.builder(
               shrinkWrap: true,
+              physics: NeverScrollableScrollPhysics(),
               itemCount: DataBase.profileTabEndSection.length,
               itemBuilder: (context, index) => ProfilePageEndSectionWidget(
                 title: DataBase.profileTabEndSection[index]["name"],
