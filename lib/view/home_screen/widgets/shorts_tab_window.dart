@@ -16,6 +16,7 @@ class _ShortsTabWindowState extends State<ShortsTabWindow> {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Row(
             children: [

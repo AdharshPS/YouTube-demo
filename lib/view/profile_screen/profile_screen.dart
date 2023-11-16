@@ -26,9 +26,29 @@ class ProfileSceen extends StatelessWidget {
               color: Colors.black,
             ),
             SizedBox(width: 35),
-            Icon(
-              Icons.notifications_none,
-              color: Colors.black,
+            Center(
+              child: Stack(
+                children: [
+                  Icon(
+                    Icons.notifications_none,
+                    color: Colors.black,
+                  ),
+                  Positioned(
+                    right: 0,
+                    child: CircleAvatar(
+                      radius: 6,
+                      backgroundColor: ColorConstant.mainRed,
+                      child: Text(
+                        "3",
+                        style: TextStyle(
+                          fontSize: 10,
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    ),
+                  )
+                ],
+              ),
             ),
             SizedBox(width: 35),
             Icon(

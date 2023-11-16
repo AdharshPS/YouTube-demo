@@ -14,6 +14,7 @@ class SubscriptionsScreen extends StatelessWidget {
         headerSliverBuilder: (BuildContext context, innerBoxIsScrolled) {
           return [
             SliverAppBar(
+              // expandedHeight: 150,
               floating: true,
               snap: true,
               backgroundColor: ColorConstant.mainWhite,
@@ -35,9 +36,29 @@ class SubscriptionsScreen extends StatelessWidget {
                   color: Colors.black,
                 ),
                 SizedBox(width: 35),
-                Icon(
-                  Icons.notifications_none,
-                  color: Colors.black,
+                Center(
+                  child: Stack(
+                    children: [
+                      Icon(
+                        Icons.notifications_none,
+                        color: Colors.black,
+                      ),
+                      Positioned(
+                        right: 0,
+                        child: CircleAvatar(
+                          radius: 6,
+                          backgroundColor: ColorConstant.mainRed,
+                          child: Text(
+                            "3",
+                            style: TextStyle(
+                              fontSize: 10,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
                 ),
                 SizedBox(width: 35),
                 Icon(
@@ -47,6 +68,23 @@ class SubscriptionsScreen extends StatelessWidget {
                 SizedBox(width: 15),
               ],
             ),
+            SliverToBoxAdapter(
+                child: SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              physics: NeverScrollableScrollPhysics(),
+              child: Row(
+                children: List.generate(
+                  8,
+                  (index) => Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: CircleAvatar(
+                      radius: 50,
+                      backgroundColor: ColorConstant.mainRed,
+                    ),
+                  ),
+                ),
+              ),
+            ))
           ];
         },
         body: Container(),
